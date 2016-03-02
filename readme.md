@@ -1,18 +1,21 @@
-# XD-MVC
+# Cross-device Maps
 
-XD-MVC brings cross-device capabilities to MVC frameworks. 
-It can be used as a plain JavaScript library. In addition, we provide an integration with [Polymer](http://www.polymer-project.org).
-XD-MVC consists of a server-side and a client-side part.
-For communication among devices, both a peer-to-peer (based on [PeerJS](http://peerjs.com/)) and a client-server (based on [Socket.io](http://socket.io/)) version exist. In addition, a hybrid version is enabled by default, which will use PeerJS for clients that support it and fall back to Socket.io for those that do not. The hybrid version is used by default, however, you are free to choose another version that suits your needs best.
-You can find three sample applications in the Examples folder: 
-Two [gallery applications](Examples/Gallery/readme.md) that are built with Polymer and a [maps application](Examples/Maps/readme.md)  built with plain JavaScript.
-More details on the framework can be found in the [framework folder](Framework/readme.md).
+This application allows to browse Google maps simulatenously from different devices.
+In the menu, you can see your device ID and connect to another devices by specifying its respective ID.
+There are three roles: viewer, mirror, and overview. Viewer devices are independent and don't react to other devices. 
+Mirror devices reproduce synchronise the center and zoom level of other viewer devices. This allows you, for example, to 
+look at the same map region once as satellite image and once as a street map. Overview devices display the regions of 
+any other connected device as a coloured rectangle.
 
-## Supported Browsers
-The framework uses some experimental JavaScript features, hence it may not work equally well in all browsers. 
-The best support is reached for Chrome.
-If peer-to-peer communication is used, that is the only browser that is fully supported due to issues of PeerJS with other browsers.
-If client-server or hybrid communication is used, also Firefox and Safari should work. For applications built with Polymer we have seen best results with Chrome, however, thanks to polyfills all modern browsers should be suppported. Internet Explorer support has not been tested. 
 
-## About this Project
-XD-MVC is under development at the [Globis Group at ETH Zürich](https://globis.ethz.ch). The project is coordinated by [Maria Husmann](https://globis.ethz.ch/#!/person/maria-husmann/). [Fabian Stutz](https://github.com/fabwid), Silvan Egli, and Marko Zivkovic have contributed to XD-MVC.
+## Installation
+This project requires [node.js](nodejs.org) and [bower](bower.io).
+It is assumed that you have both the Framework and the Examples folder in the same directory (as it is here in the repository).
+
+1. `npm install`
+2. `bower install`
+
+## Starting
+1. `node server.js`
+2. Point your browser to http://hostname:8080/maps.html
+
